@@ -1,0 +1,28 @@
+### get blogs
+GET http://localhost:3001/api/blogs
+
+
+### Create blog mandando el bearer token, que es el token devuelto en el login
+POST http://localhost:3001/api/blogs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkdvbnphbG9fNzciLCJpZCI6IjY4MjM1ZGYzZmY4ZWVkYWNiODhhODQ3MCIsImlhdCI6MTc0ODMxNDMyNiwiZXhwIjoxNzQ4MzE3OTI2fQ.kBE9uNGtZOjScjSaeVFk6HaHDNW6owabn5r3lukAvZQ
+
+{
+    "title":"Nuevo blog authorization BORRAR",
+    "author":"Gonzalinho",
+    "url":"http://gonzalinho.com",
+    "likes":2
+}
+
+
+### Delete blog
+DELETE http://localhost:3001/api/blogs/683528f6356333110c473038
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkdvbnphbG9fNzciLCJpZCI6IjY4MjM1ZGYzZmY4ZWVkYWNiODhhODQ3MCIsImlhdCI6MTc0ODMxNDMyNiwiZXhwIjoxNzQ4MzE3OTI2fQ.kBE9uNGtZOjScjSaeVFk6HaHDNW6owabn5r3lukAvZQ
+
+### Update blog 
+PUT http://localhost:3001/api/blogs/682128465c7a2c8fa32d1f16
+Content-Type: application/json
+
+{
+    "likes":20
+}
