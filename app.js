@@ -34,6 +34,12 @@ app.use(middleware.tokenExtractor); // Disponible para todas mis rutas
 app.use('/api/blogs', blogsRouter);
 app.use('/api/users',usersRouter);
 app.use('/api/login', loginRouter);
+/** Solo ejecutare esto si estoy en modo prueba */
+if (process.env.NODE_ENV === 'test') {
+  const testingRouter = require('./controllers/testing');
+  app.use('/api/testing', testingRouter); // post a /api/testing
+}
+
 app.use(middleware.unknownEndpoint)
 app.use(middleware.errorHandler)
 
