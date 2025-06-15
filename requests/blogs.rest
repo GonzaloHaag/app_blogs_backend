@@ -5,7 +5,7 @@ GET http://localhost:3001/api/blogs
 ### Create blog mandando el bearer token, que es el token devuelto en el login
 POST http://localhost:3001/api/blogs
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkdvbnphbG9fNzciLCJpZCI6IjY4MjM1ZGYzZmY4ZWVkYWNiODhhODQ3MCIsImlhdCI6MTc0ODMxNDMyNiwiZXhwIjoxNzQ4MzE3OTI2fQ.kBE9uNGtZOjScjSaeVFk6HaHDNW6owabn5r3lukAvZQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkdvbnphbG9fNzciLCJpZCI6IjY4MjM1ZGYzZmY4ZWVkYWNiODhhODQ3MCIsImlhdCI6MTc0OTkzOTI5NSwiZXhwIjoxNzQ5OTQyODk1fQ.ldy9iRayTWD-VbP2MwXJJlwYNEp_STAzk0sK2lheieY
 
 {
     "title":"Nuevo blog authorization BORRAR",
@@ -32,3 +32,6 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ikdvb
      "url":"www.newUrl.com"
 
 }
+
+###
+GET http://localhost:3001/api/blogs/6835c5e22b96e43fa938f17e

@@ -5,10 +5,24 @@ const blogsRouter = require('express').Router();
 const Blog = require('../models/blog');
 const middleware = require('../utils/middleware');
 const jwt = require('jsonwebtoken');
+
 blogsRouter.get('/', async (request, response) => {
   const blogs = await Blog.find({}).populate('user', { username: 1, name: 1, id: 1 }); // datos del user a mostrar
   response.json(blogs)
 })
+
+blogsRouter.get('/:id', async(request, response, next) => {
+  try {
+    const blog = await Blog.findById(request.params.id).populate('user', { username: 1, name: 1, id: 1 });
+    if(!blog) {
+      return response.status(404).json({ error:'Blog not found' })
+    }
+    response.status(200).json(blog)
+  } catch (error) {
+    next(error)
+  }
+})
+
 
 blogsRouter.post('/', middleware.userExtractor, async (request, response, next) => {
   const body = request.body;
